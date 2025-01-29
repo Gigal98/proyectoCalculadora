@@ -1,5 +1,5 @@
 const pantalla =document.querySelector(".pantalla");
-const botones = document.querySelector(".btn");
+const botones = document.querySelectorAll(".btn");
 
 botones.forEach(boton =>{
     boton.addEventListener("click", () =>{
@@ -20,12 +20,13 @@ botones.forEach(boton =>{
             return;
         }
 
-        if(boton.id=== "igual"){
+        if(boton.id === "igual"){
             try{
                 pantalla.textContent = eval(pantalla.textContent);
             }catch{
                 pantalla.textContent = "Error!";
             }
+            return;
         }
 
         if(pantalla.textContent === "0" || pantalla.textContent === "Error!"){
